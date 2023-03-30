@@ -18,7 +18,7 @@ export default function Home() {
             }}
             weight="bold"
           >
-            Welcome to Aruba & Yaseen's Wedding App!
+            Welcome to Aruba & Yaseen&apos;s Wedding App!
           </Text>
           <Text
             h1
