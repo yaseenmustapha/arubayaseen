@@ -1,14 +1,32 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import { useSession, signIn, signOut } from "next-auth/react";
 import { useSelectedLayoutSegment } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Nav() {
   // const { data: session } = useSession();
   // const { user } = session || {};
   const segment = useSelectedLayoutSegment();
-  const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isNavOpen, setIsNavOpen] = useState(false)
+  
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
@@ -40,11 +58,12 @@ export default function Nav() {
 
   return (
     <div
-      className="bg-contain bg-center bg-no-repeat"
-      style={{ backgroundImage: `url('/topimage.png')` }}
+      className={isMobile ? "" : `bg-contain bg-center bg-no-repeat`}
+      style={isMobile ? {} : { backgroundImage: `url('/topimage.png')` }}
     >
+      {isMobile && <Image src="/topimagemobile.png" alt="Header image" width={window.innerWidth} height={500} />}
       <div className="container mx-auto px-6 py-3" style={{ height: "750px" }}>
-        <div className="text-center py-6" style={{ marginTop: "250px" }}>
+        <div className="text-center py-6" style={isMobile ? {} : { marginTop: "250px" }}>
           <p className="font-gilda text-5xl font-light tracking-widest">
             ARUBA AND YASEEN
           </p>
