@@ -9,8 +9,8 @@ export default function Nav() {
   // const { data: session } = useSession();
   // const { user } = session || {};
   const segment = useSelectedLayoutSegment();
-  const [isNavOpen, setIsNavOpen] = useState(false)
-  
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -61,9 +61,19 @@ export default function Nav() {
       className={isMobile ? "" : `bg-contain bg-center bg-no-repeat`}
       style={isMobile ? {} : { backgroundImage: `url('/topimage.png')` }}
     >
-      {isMobile && <Image src="/topimagemobile.png" alt="Header image" width={window.innerWidth} height={500} />}
-      <div className="container mx-auto px-6 py-3" style={{ height: "750px" }}>
-        <div className="text-center py-6" style={isMobile ? {} : { marginTop: "250px" }}>
+      {isMobile && (
+        <Image
+          src="/topimagemobile.png"
+          alt="Header image"
+          width={window.innerWidth}
+          height={500}
+        />
+      )}
+      <div className="container mx-auto px-6 py-3" style={{ height: isMobile ? "700px" : "750px" }}>
+        <div
+          className="text-center py-6"
+          style={isMobile ? {} : { marginTop: "250px" }}
+        >
           <p className="font-gilda text-5xl font-light tracking-widest">
             ARUBA AND YASEEN
           </p>
@@ -76,42 +86,13 @@ export default function Nav() {
             {daysToGo()} DAYS TO GO!
           </p>
         </div>
-        <nav className="flex items-center justify-between flex-wrap p-6 font-gilda">
-          <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-            <div className="text-md lg:flex-grow text-center">
-              <button
-                className="lg:hidden block mr-4 relative focus:outline-none"
-                onClick={toggleNav}
-              >
-                <svg
-                  className="fill-current text-gray-600 hover:text-gray-700 h-6 w-6"
-                  viewBox="0 0 24 24"
-                >
-                  {isNavOpen ? (
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M19.414 4.586a2 2 0 00-2.828 0L12 9.172 7.414 4.586a2 2 0 10-2.828 2.828L9.172 12l-4.586 4.586a2 2 0 102.828 2.828L12 14.828l4.586 4.586a2 2 0 102.828-2.828L14.828 12l4.586-4.586a2 2 0 000-2.828z"
-                      fill="currentColor"
-                    />
-                  ) : (
-                    <path
-                      fillRule="evenodd"
-                      clipRule="evenodd"
-                      d="M4 6a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm2-2a1 1 0 00-1 1v2a1 1 0 001 1h12a1 1 0 001-1V5a1 1 0 00-1-1H6z"
-                      fill="currentColor"
-                    />
-                  )}
-                </svg>
-              </button>
-              <div
-                className={`${
-                  isNavOpen ? "block" : "hidden"
-                } lg:block mt-4 lg:inline-block lg:mt-0 text-gray-600 mr-4 relative`}
-              >
+        {isMobile ? (
+          <nav className="p-6 font-gilda">
+            <div className="inline">
+              <div className="text-sm text-center">
                 <Link href="/">
                   <p
-                    className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 mr-4 relative hover-underline tracking-widest italic ${
+                    className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 relative hover-underline tracking-widest italic ${
                       !segment ? "current-page" : "underline-page"
                     }`}
                   >
@@ -120,17 +101,100 @@ export default function Nav() {
                 </Link>
                 <Link href="/rsvp">
                   <p
-                    className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 mr-4 relative hover-underline tracking-widest italic ${
+                    className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 relative hover-underline tracking-widest italic ${
                       segment === "rsvp" ? "current-page" : "underline-page"
                     }`}
                   >
                     RSVP
                   </p>
                 </Link>
+                <Link href="/gallery">
+                  <p
+                    className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 relative hover-underline tracking-widest italic ${
+                      segment === "gallery" ? "current-page" : "underline-page"
+                    }`}
+                  >
+                    Gallery
+                  </p>
+                </Link>
+                <Link href="/chat">
+                  <p
+                    className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 relative hover-underline tracking-widest italic ${
+                      segment === "chat" ? "current-page" : "underline-page"
+                    }`}
+                  >
+                    Chat
+                  </p>
+                </Link>
+                <a href="/registry">
+                  {" "}
+                  {/* TODO: change to Link once subsequent script loading is fixed */}
+                  <p
+                    className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 relative hover-underline tracking-widest italic ${
+                      segment === "registry" ? "current-page" : "underline-page"
+                    }`}
+                  >
+                    Registry
+                  </p>
+                </a>
               </div>
             </div>
-          </div>
-        </nav>
+          </nav>
+        ) : (
+          <nav className="flex items-center justify-between flex-wrap p-6 font-gilda">
+            <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+              <div className="text-md lg:flex-grow text-center">
+                <Link href="/">
+                  <p
+                    className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 mr-10 relative hover-underline tracking-widest italic ${
+                      !segment ? "current-page" : "underline-page"
+                    }`}
+                  >
+                    Home
+                  </p>
+                </Link>
+                <Link href="/rsvp">
+                  <p
+                    className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 mr-10 relative hover-underline tracking-widest italic ${
+                      segment === "rsvp" ? "current-page" : "underline-page"
+                    }`}
+                  >
+                    RSVP
+                  </p>
+                </Link>
+                <Link href="/gallery">
+                  <p
+                    className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 mr-10 relative hover-underline tracking-widest italic ${
+                      segment === "gallery" ? "current-page" : "underline-page"
+                    }`}
+                  >
+                    Gallery
+                  </p>
+                </Link>
+                <Link href="/chat">
+                  <p
+                    className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 mr-10 relative hover-underline tracking-widest italic ${
+                      segment === "chat" ? "current-page" : "underline-page"
+                    }`}
+                  >
+                    Chat
+                  </p>
+                </Link>
+                <a href="/registry">
+                  {" "}
+                  {/* TODO: change to Link once subsequent script loading is fixed */}
+                  <p
+                    className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 mr-10 relative hover-underline tracking-widest italic ${
+                      segment === "registry" ? "current-page" : "underline-page"
+                    }`}
+                  >
+                    Registry
+                  </p>
+                </a>
+              </div>
+            </div>
+          </nav>
+        )}
       </div>
     </div>
   );
