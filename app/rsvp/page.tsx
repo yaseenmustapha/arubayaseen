@@ -222,12 +222,14 @@ export default function Rsvp() {
                   required
                 />
               </div>
-              <button
-                type="submit"
-                className="bg-gray-500 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              >
-                Submit
-              </button>
+              <div className="mb-4">
+                <button
+                  type="submit"
+                  className="bg-gray-500 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                >
+                  Submit
+                </button>
+              </div>
             </>
           )}
           {continuePressed && rsvpExists && (
