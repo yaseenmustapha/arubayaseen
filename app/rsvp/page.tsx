@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { MouseEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Rsvp() {
   const searchParams = useSearchParams();
@@ -60,7 +60,7 @@ export default function Rsvp() {
     });
     if (res.ok) {
       // show success message
-      setSuccessMessage("Your RSVP has been recroded. Thank you!");
+      setSuccessMessage("Your RSVP has been recorded. Thank you!");
     }
   };
 
@@ -86,56 +86,6 @@ export default function Rsvp() {
 
   return (
     <main>
-      {/*         
-      <Image src="/nikkah.png" alt="Next.js Logo" width={600} height={500} />
-      <Container display="flex" alignItems="center" direction="column" xs>
-        <Input
-          label="Email"
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        {!continuePressed && (
-          <Button onPress={() => handleContinue()}>Continue</Button>
-        )}
-        {continuePressed && !rsvpExists && (
-          <>
-            <Input
-              label="First Name"
-              type="text"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-            />
-            <Input
-              label="Last Name"
-              type="text"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-            />
-            <Input
-              label="How many guests (including yourself)?"
-              type="number"
-              value={numGuests}
-              onChange={(e) => setNumGuests(Number(e.target.value))}
-            />
-            <Button onPress={() => createRsvp()}>Submit</Button>
-          </>
-        )}
-        {continuePressed && rsvpExists && (
-          <>
-            <Text>
-              {firstName} {lastName}
-            </Text>
-            <Input
-              label="How many guests (including yourself)?"
-              type="number"
-              value={numGuests}
-              onChange={(e) => setNumGuests(Number(e.target.value))}
-            />
-            <Button onPress={() => updateRsvp()}>Update</Button>
-          </>
-        )}
-      </Container> */}
       <div className="max-w-lg mx-auto -mt-48 mb-48 p-6 bg-white shadow-md">
         <h1 className="font-gilda text-xl font-bold mb-6">RSVP</h1>
         <form onSubmit={createRsvp}>

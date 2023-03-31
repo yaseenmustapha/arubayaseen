@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import prisma from "@/lib/prisma";
+import { sendConfirmationEmail } from "@/lib/email";
 
 export default async function handler(
   req: NextApiRequest,
@@ -17,6 +18,7 @@ export default async function handler(
           quantity,
         },
       });
+      sendConfirmationEmail({ email, firstName, lastName, numGuests: quantity });
       return res.json(result);
     } catch (err) {
       res.status(402).json({ err: "Error has occured while creating an RSVP" });
@@ -48,6 +50,7 @@ export default async function handler(
           quantity,
         },
       });
+      sendConfirmationEmail({ email, firstName, lastName, numGuests: quantity });
       return res.json(result);
     } catch (err) {
       res.status(402).json({ err: "Error has occured while updating an RSVP" });
