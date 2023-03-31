@@ -1,8 +1,11 @@
 "use client";
 
-import { MouseEvent, useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { MouseEvent, useEffect, useState } from "react";
 
 export default function Rsvp() {
+  const searchParams = useSearchParams();
+  const emailParam = searchParams?.get("email");
   const [continuePressed, setContinuePressed] = useState(false);
   const [rsvpExists, setRsvpExists] = useState(false);
   const [email, setEmail] = useState("");
@@ -11,6 +14,12 @@ export default function Rsvp() {
   const [lastName, setLastName] = useState("");
   const [numGuests, setNumGuests] = useState(1);
   const [successMessage, setSuccessMessage] = useState("");
+
+  useEffect(() => {
+    if (emailParam) {
+      setEmail(emailParam);
+    }
+  }, []);
 
   const handleContinue = async (e: any) => {
     e.preventDefault();
