@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Gilda Display";
+  src: url("/fonts/GildaDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.current-page::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
+.current-page:focus::after,
+.current-page:hover::after {
+  /* remove hover and focus styles */
+  /* you can also remove the transition property */
+  opacity: 1;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+}
+
+.underline-page::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #000;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.underline-page:hover::after {
+  opacity: 1;
+}
+.underline-page:focus::after {
+  opacity: 1;
+}

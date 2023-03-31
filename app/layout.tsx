@@ -1,5 +1,6 @@
 import ProvidersWrapper from "./ProvidersWrapper";
 import Nav from "./Nav";
+import './globals.css';
 
 export const metadata = {
   title: "Aruba and Yaseen's Wedding",
