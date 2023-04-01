@@ -30,6 +30,10 @@ const images = [
     src: "/nikkah6.jpg",
     caption: "Nikkah 6",
   },
+  {
+    src: "/nikkah7.jpg",
+    caption: "Nikkah 7",
+  },
 ];
 
 export default function ImageCarousel() {

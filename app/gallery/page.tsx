@@ -16,10 +16,18 @@ const photos = [
   { src: "/image10.jpg", width: 3024, height: 4032 },
   { src: "/image11.jpg", width: 1500, height: 2000 },
   { src: "/image12.jpg", width: 3024, height: 4032 },
+  { src: "/image13.jpg", width: 1156, height: 1540 },
+  { src: "/image14.jpg", width: 2054, height: 1540 },
+  { src: "/image15.jpg", width: 6240, height: 4160 },
+  { src: "/image16.jpg", width: 6240, height: 4160 },
 ];
+
+const randomSort = () => Math.random() - 0.5;
 
 export default function Gallery() {
   const [isMobile, setIsMobile] = useState(false);
+
+  const randomizedPhotos = [...photos].sort(randomSort);
 
   useEffect(() => {
     const handleResize = () => {
@@ -58,11 +66,11 @@ export default function Gallery() {
   return (
     <main>
       <div
-        className="mx-auto -mt-36 p-10 overflow-hidden"
+        className="mx-auto -mt-36 p-10 overflow-hidden max-w-6xl"
         style={{ width: "100%" }}
       >
         {isMobile ? (
-          photos.map((photo, i) => (
+          randomizedPhotos.map((photo, i) => (
             <img
               key={i}
               src={photo.src}
@@ -79,7 +87,12 @@ export default function Gallery() {
             />
           ))
         ) : (
-          <PhotoAlbum layout="rows" photos={photos} renderPhoto={renderPhoto} />
+          <PhotoAlbum
+            layout="rows"
+            photos={randomizedPhotos}
+            targetRowHeight={400}
+            renderPhoto={renderPhoto}
+          />
         )}
       </div>
     </main>
