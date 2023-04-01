@@ -4,7 +4,7 @@ import ImageCarousel from "./ImageCarousel";
 export default function Home() {
   return (
     <main>
-      <div className="-mt-36 max-h-12">
+      <div className="-mt-36">
         <ImageCarousel />
       </div>
     </main>

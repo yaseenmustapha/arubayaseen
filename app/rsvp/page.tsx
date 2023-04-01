@@ -60,7 +60,7 @@ export default function Rsvp() {
     });
     if (res.ok) {
       // show success message
-      setSuccessMessage("Your RSVP has been recorded. Thank you!");
+      setSuccessMessage("Your RSVP has been recorded. A confirmation email has been sent. Thank you!");
     }
   };
 
@@ -80,7 +80,7 @@ export default function Rsvp() {
     });
     if (res.ok) {
       // show success message
-      setSuccessMessage("Your RSVP has been updated. Thank you!");
+      setSuccessMessage("Your RSVP has been updated. A confirmation email has been sent. Thank you!");
     }
   };
 
@@ -184,7 +184,7 @@ export default function Rsvp() {
               <div className="mb-4">
                 <button
                   type="submit"
-                  className="bg-gray-500 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  className="font-gilda bg-gray-500 hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                 >
                   Submit
                 </button>

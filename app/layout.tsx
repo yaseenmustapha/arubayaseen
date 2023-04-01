@@ -1,6 +1,7 @@
 import ProvidersWrapper from "./ProvidersWrapper";
 import Nav from "./Nav";
 import './globals.css';
+import Footer from "./Footer";
 
 export const metadata = {
   title: "Aruba and Yaseen's Wedding",
@@ -18,6 +19,7 @@ export default function RootLayout({
         <ProvidersWrapper>
           <Nav />
           {children}
+          <Footer />
         </ProvidersWrapper>
       </body>
     </html>
