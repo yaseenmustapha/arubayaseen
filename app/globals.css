@@ -9,15 +9,6 @@
   font-style: normal;
 }
 
-html {
-  height: 100%;
-}
-
-body {
-  width: 100%;
-  height: 100%;
-}
-
 .current-page::after {
   content: "";
   position: absolute;
@@ -91,7 +82,7 @@ body {
 }
 
 .carousel .slide img {
-  max-height: 500px; /* change this to whatever you want */
+  max-height: 500px;  /* change this to whatever you want */
   width: auto;
 }
 
