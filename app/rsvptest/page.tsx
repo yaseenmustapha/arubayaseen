@@ -15,12 +15,6 @@ export default function RsvpTest() {
   const [numGuests, setNumGuests] = useState("1");
   const [successMessage, setSuccessMessage] = useState("");
 
-  useEffect(() => {
-    if (emailParam) {
-      setEmail(emailParam);
-    }
-  }, []);
-
   const handleContinue = async (e: any) => {
     e.preventDefault();
     // check if rsvp exists
