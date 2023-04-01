@@ -11,7 +11,7 @@ export default function Nav() {
   const segment = useSelectedLayoutSegment();
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
     const handleResize = () => {
@@ -62,10 +62,10 @@ export default function Nav() {
       style={isMobile ? {} : { backgroundImage: `url('/topimage.png')` }}
     >
       {isMobile && (
-        <Image
+        <img
           src="/topimagemobile.png"
           alt="Header image"
-          width={window.innerWidth}
+          width="100%"
           height={500}
         />
       )}
