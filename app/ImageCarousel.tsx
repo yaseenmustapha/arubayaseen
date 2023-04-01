@@ -34,7 +34,7 @@ const images = [
 
 export default function ImageCarousel() {
   return (
-    <Carousel showArrows={true} autoPlay infiniteLoop swipeable dynamicHeight>
+    <Carousel showArrows={true} autoPlay infiniteLoop swipeable>
       {images.map((image, index) => (
         <div key={index}>
           <img src={image.src} alt={image.caption} />
