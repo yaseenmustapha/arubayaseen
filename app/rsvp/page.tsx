@@ -12,7 +12,7 @@ export default function Rsvp() {
   const [emailError, setEmailError] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [numGuests, setNumGuests] = useState(1);
+  const [numGuests, setNumGuests] = useState("1");
   const [successMessage, setSuccessMessage] = useState("");
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export default function Rsvp() {
         email: email,
         firstName: firstName,
         lastName: lastName,
-        quantity: numGuests,
+        quantity: Number(numGuests),
       }),
     });
     if (res.ok) {
@@ -75,7 +75,7 @@ export default function Rsvp() {
         email: email,
         firstName: firstName,
         lastName: lastName,
-        quantity: numGuests,
+        quantity: Number(numGuests),
       }),
     });
     if (res.ok) {
@@ -177,7 +177,7 @@ export default function Rsvp() {
                   name="quantity"
                   className="font-gilda shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   value={numGuests}
-                  onChange={(event) => setNumGuests(Number(event.target.value))}
+                  onChange={(event) => setNumGuests(event.target.value)}
                   required
                 />
               </div>
@@ -211,7 +211,7 @@ export default function Rsvp() {
                   name="quantity"
                   className="font-gilda shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                   value={numGuests}
-                  onChange={(event) => setNumGuests(Number(event.target.value))}
+                  onChange={(event) => setNumGuests(event.target.value)}
                   required
                 />
               </div>
