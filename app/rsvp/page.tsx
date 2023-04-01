@@ -60,7 +60,9 @@ export default function Rsvp() {
     });
     if (res.ok) {
       // show success message
-      setSuccessMessage("Your RSVP has been recorded. A confirmation email has been sent. Thank you!");
+      setSuccessMessage(
+        "Your RSVP has been recorded. A confirmation email has been sent. Thank you!"
+      );
     }
   };
 
@@ -80,7 +82,9 @@ export default function Rsvp() {
     });
     if (res.ok) {
       // show success message
-      setSuccessMessage("Your RSVP has been updated. A confirmation email has been sent. Thank you!");
+      setSuccessMessage(
+        "Your RSVP has been updated. A confirmation email has been sent. Thank you!"
+      );
     }
   };
 
@@ -173,6 +177,8 @@ export default function Rsvp() {
                 </label>
                 <input
                   type="number"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   id="quantity"
                   name="quantity"
                   className="font-gilda shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -207,6 +213,8 @@ export default function Rsvp() {
                 </label>
                 <input
                   type="number"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
                   id="quantity"
                   name="quantity"
                   className="font-gilda shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
