@@ -11,14 +11,14 @@ export default function Nav() {
   const segment = useSelectedLayoutSegment();
   const [isNavOpen, setIsNavOpen] = useState(false);
 
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsMobile(false);
-      } else {
+      if (window.innerWidth < 768) {
         setIsMobile(true);
+      } else {
+        setIsMobile(false);
       }
     };
 
