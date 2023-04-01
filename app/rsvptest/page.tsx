@@ -1,8 +1,11 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 export default function RsvpTest() {
+  // const searchParams = useSearchParams();
+  // const emailParam = searchParams?.get("email") || null;
   const [continuePressed, setContinuePressed] = useState(false);
   const [rsvpExists, setRsvpExists] = useState(false);
   const [email, setEmail] = useState("");
