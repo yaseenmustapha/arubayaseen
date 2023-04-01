@@ -75,3 +75,13 @@
 .carousel .control-dots .dot.selected {
   background: #333;
 }
+
+.carousel .thumb img {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.carousel .slide img {
+  max-height: 500px;  /* change this to whatever you want */
+  width: auto;
+}

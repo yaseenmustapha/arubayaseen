@@ -69,13 +69,21 @@ export default function Nav() {
           height={500}
         />
       )}
-      <div className="container mx-auto px-6 py-3" style={{ height: isMobile ? "700px" : "750px" }}>
+      <div
+        className="container mx-auto px-6 py-3"
+        style={{ height: isMobile ? "750px" : "800px" }}
+      >
         <div
           className="text-center py-6"
           style={isMobile ? {} : { marginTop: "250px" }}
         >
           <p className="font-gilda text-5xl font-light tracking-widest">
             ARUBA AND YASEEN
+          </p>
+        </div>
+        <div className="text-center py-1">
+          <p className="font-gilda text-2xl font-light tracking-widest">
+            #HaveYaSeenAruba
           </p>
         </div>
         <div className="text-center py-6">
