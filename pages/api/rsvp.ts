@@ -18,7 +18,8 @@ export default async function handler(
           quantity,
         },
       });
-      await sendConfirmationEmail({ email, firstName, lastName, numGuests: quantity });
+      const { id } = result;
+      await sendConfirmationEmail({ id, email, firstName, lastName, numGuests: quantity });
       return res.json(result);
     } catch (err) {
       res.status(402).json({ err: "Error has occured while creating an RSVP" });
@@ -50,7 +51,8 @@ export default async function handler(
           quantity,
         },
       });
-      await sendConfirmationEmail({ email, firstName, lastName, numGuests: quantity });
+      const { id } = result;
+      await sendConfirmationEmail({ id, email, firstName, lastName, numGuests: quantity });
       return res.json(result);
     } catch (err) {
       res.status(402).json({ err: "Error has occured while updating an RSVP" });

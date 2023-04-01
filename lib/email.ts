@@ -3,6 +3,7 @@ import sgMail, { MailDataRequired } from "@sendgrid/mail";
 sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
 
 interface ConfirmationEmailData {
+  id: string;
   email: string;
   firstName: string;
   lastName: string;
@@ -10,7 +11,7 @@ interface ConfirmationEmailData {
 }
 
 export async function sendConfirmationEmail(data: ConfirmationEmailData) {
-  const { email, firstName, lastName, numGuests } = data;
+  const { id, email, firstName, lastName, numGuests } = data;
   const msg: MailDataRequired = {
     to: email,
     from: {
@@ -19,6 +20,7 @@ export async function sendConfirmationEmail(data: ConfirmationEmailData) {
     },
     templateId: process.env.SENDGRID_TEMPLATE_ID as string,
     dynamicTemplateData: {
+      id: id,
       email: email,
       firstName: firstName,
       lastName: lastName,
