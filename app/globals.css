@@ -85,3 +85,12 @@
   max-height: 500px;  /* change this to whatever you want */
   width: auto;
 }
+
+.carousel .slide .legend {
+  position: absolute;
+  background: #0000;
+  color: #ffffff;
+  font-size: 14px;
+  opacity: 1;
+  bottom: 0;
+}
