@@ -7,7 +7,7 @@ import { Carousel } from "react-responsive-carousel";
 
 const images = [
   {
-    src: "/nikkah.png",
+    src: "/nikkah1.png",
     caption: "Nikkah Illustration",
   },
   {
@@ -15,53 +15,20 @@ const images = [
     caption: "Nikkah IRL",
   },
   {
-    src: "/image1.jpg",
-    caption:
-      "Canyon Lights at Capilano Suspension Bridge Park",
+    src: "/nikkah3.jpg",
+    caption: "Nikkah 3",
   },
   {
-    src: "/image2.jpg",
-    caption: "Water's Edge Café",
+    src: "/nikkah4.jpg",
+    caption: "Nikkah 4",
   },
   {
-    src: "/image3.jpg",
-    caption: "Dessert at Happy Singh Street Eats",
+    src: "/nikkah5.jpg",
+    caption: "Nikkah 5",
   },
   {
-    src: "/image4.jpg",
-    caption: "Valentine's Day 2023",
-  },
-  {
-    src: "/image5.jpg",
-    caption: "Ski day with friends at Cypress Mountain",
-  },
-  {
-    src: "/image6.jpg",
-    caption: "Hina's Dholki",
-  },
-  {
-    src: "/image7.jpg",
-    caption: "Out for dessert",
-  },
-  {
-    src: "/image8.jpg",
-    caption: "Polaroid from the Nikkah",
-  },
-  {
-    src: "/image9.jpg",
-    caption: "Dinner at RH Rooftop Restaurant",
-  },
-  {
-    src: "/image10.jpg",
-    caption: "With Yaseen's family at Capilano Suspension Bridge Park",
-  },
-  {
-    src: "/image11.jpg",
-    caption: "Cooper's Hawk Restaurant",
-  },
-  {
-    src: "/image12.jpg",
-    caption: "The Bean at Millennium Park",
+    src: "/nikkah6.jpg",
+    caption: "Nikkah 6",
   },
 ];
 
