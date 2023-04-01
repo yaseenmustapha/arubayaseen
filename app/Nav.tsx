@@ -71,7 +71,7 @@ export default function Nav() {
       )}
       <div
         className="container mx-auto px-6 py-3"
-        style={{ height: isMobile ? "750px" : "800px" }}
+        style={{ height: isMobile ? "700px" : "750px" }}
       >
         <div
           className="text-center py-6"

@@ -15,7 +15,7 @@ export default function Registry() {
       <div
         ref={containerRef}
         id="script-container"
-        className="max-w-2xl mx-auto -mt-48"
+        className="max-w-2xl mx-auto -mt-36"
       >
         <Script
           id="script_myregistry_giftlist_iframe"

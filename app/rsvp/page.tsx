@@ -86,7 +86,7 @@ export default function Rsvp() {
 
   return (
     <main>
-      <div className="max-w-lg mx-auto -mt-48 mb-48 p-6">
+      <div className="max-w-lg mx-auto -mt-36 mb-48 p-6">
         <h1 className="font-gilda text-xl font-bold mb-6">RSVP</h1>
         <form onSubmit={createRsvp}>
           <div className="mb-4">
