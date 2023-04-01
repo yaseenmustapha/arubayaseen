@@ -1,7 +1,7 @@
 "use client";
 
-import { useSearchParams } from "next/navigation";
-import { useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function RsvpTest() {
   const searchParams = useSearchParams();
@@ -14,6 +14,11 @@ export default function RsvpTest() {
   const [lastName, setLastName] = useState("");
   const [numGuests, setNumGuests] = useState("1");
   const [successMessage, setSuccessMessage] = useState("");
+
+  const pathname = usePathname();
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, [pathname]);
 
   const handleContinue = async (e: any) => {
     e.preventDefault();
