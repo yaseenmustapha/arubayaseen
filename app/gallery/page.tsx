@@ -20,6 +20,23 @@ const photos = [
   { src: "/image14.jpg", width: 2054, height: 1540 },
   { src: "/image15.jpg", width: 6240, height: 4160 },
   { src: "/image16.jpg", width: 6240, height: 4160 },
+  { src: "/image17.jpg", width: 6240, height: 4160 },
+  { src: "/image18.jpg", width: 6240, height: 4160 },
+  { src: "/image19.jpg", width: 6240, height: 4160 },
+  { src: "/image20.jpg", width: 6240, height: 4160 },
+  { src: "/image21.jpg", width: 6240, height: 4160 },
+  { src: "/image22.jpg", width: 6240, height: 4160 },
+  { src: "/image23.jpg", width: 6240, height: 4160 },
+  { src: "/image24.jpg", width: 6240, height: 4160 },
+  { src: "/image25.jpg", width: 4160, height: 6240 },
+  { src: "/image26.jpg", width: 6240, height: 4160 },
+  { src: "/image27.jpg", width: 6240, height: 4160 },
+  { src: "/image28.jpg", width: 4160, height: 6240 },
+  { src: "/image29.jpg", width: 6240, height: 4160 },
+  { src: "/image30.jpg", width: 6240, height: 4160 },
+  { src: "/image31.jpg", width: 6240, height: 4160 },
+  { src: "/image32.jpg", width: 6240, height: 4160 },
+  { src: "/image33.jpg", width: 1500, height: 2000 },
 ];
 
 const randomSort = () => Math.random() - 0.5;

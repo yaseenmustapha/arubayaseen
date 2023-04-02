@@ -34,6 +34,58 @@ const images = [
     src: "/nikkah7.jpg",
     caption: "Nikkah 7",
   },
+  {
+    src: "/nikkah8.jpg",
+    caption: "Nikkah 8",
+  },
+  {
+    src: "/nikkah9.jpg",
+    caption: "Nikkah 9",
+  },
+  {
+    src: "/nikkah10.jpg",
+    caption: "Nikkah 10",
+  },
+  {
+    src: "/nikkah11.jpg",
+    caption: "Nikkah 11",
+  },
+  {
+    src: "/nikkah12.jpg",
+    caption: "Nikkah 12",
+  },
+  {
+    src: "/nikkah13.jpg",
+    caption: "Nikkah 13",
+  },
+  {
+    src: "/nikkah14.jpg",
+    caption: "Nikkah 14",
+  },
+  {
+    src: "/nikkah15.jpg",
+    caption: "Nikkah 15",
+  },
+  {
+    src: "/nikkah16.jpg",
+    caption: "Nikkah 16",
+  },
+  {
+    src: "/nikkah17.jpg",
+    caption: "Nikkah 17",
+  },
+  {
+    src: "/nikkah18.jpg",
+    caption: "Nikkah 18",
+  },
+  {
+    src: "/nikkah19.jpg",
+    caption: "Nikkah 19",
+  },
+  {
+    src: "/nikkah20.jpg",
+    caption: "Nikkah 20",
+  },
 ];
 
 export default function ImageCarousel() {
