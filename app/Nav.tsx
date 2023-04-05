@@ -48,12 +48,25 @@ export default function Nav() {
     </svg>
   );
 
-  const daysToGo = () => {
+  const calculateDaysToGo = () => {
     const currentDate = new Date();
     const targetDate = new Date("2023-07-02");
     const differenceInTime = targetDate.getTime() - currentDate.getTime();
     const differenceInDays = Math.ceil(differenceInTime / (1000 * 3600 * 24));
     return differenceInDays;
+  };
+
+  const daysToGoText = () => {
+    const daysToGo = calculateDaysToGo();
+    if (daysToGo === 0) {
+      return "The day has arrived!";
+    } else if (daysToGo === 1) {
+      return "1 day to go!";
+    } else if (daysToGo < 0) {
+      return `It's been ${Math.abs(daysToGo)} days since!`;
+    } else {
+      return `${daysToGo} days to go!`;
+    }
   };
 
   return (
@@ -91,7 +104,7 @@ export default function Nav() {
             JULY 2, 2023
           </p>
           <p className="font-gilda text-xl font-light tracking-widest">
-            {daysToGo()} DAYS TO GO!
+            {daysToGoText()}
           </p>
         </div>
         {isMobile ? (
