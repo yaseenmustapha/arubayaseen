@@ -57,7 +57,7 @@ export default function Nav() {
   };
 
   const daysToGoText = () => {
-    const daysToGo = calculateDaysToGo();
+    const daysToGo = 0; // calculateDaysToGo();
     if (daysToGo === 0) {
       return "The day has arrived!";
     } else if (daysToGo === 1) {
