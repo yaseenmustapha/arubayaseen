@@ -83,7 +83,7 @@ export default function Gallery() {
   return (
     <main>
       <div
-        className="mx-auto -mt-36 p-10 overflow-hidden max-w-6xl"
+        className="mx-auto -mt-24 p-10 overflow-hidden max-w-6xl"
         style={{ width: "100%" }}
       >
         {isMobile ? (

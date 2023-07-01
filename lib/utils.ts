@@ -1,10 +1,8 @@
 export function formatDate(input: string | number): string {
   const date = new Date(input);
-  return date.toLocaleString("en-US", {
-    month: "long",
-    day: "numeric",
-    year: "numeric",
+  return date.toLocaleTimeString("en-US", {
     hour: "numeric",
-    minute: "numeric",
+    minute: "2-digit",
+    hour12: true,
   });
 }
