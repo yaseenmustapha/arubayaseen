@@ -48,6 +48,7 @@ export default function AddPost(): JSX.Element {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (loading) return;
+    if (content.length === 0 || !previewUrl) return;
     setLoading(true);
     setError(false);
 
