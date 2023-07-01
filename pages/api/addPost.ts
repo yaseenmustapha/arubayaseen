@@ -43,6 +43,7 @@ export default async function handler(
       },
     });
 
+    res.revalidate("/chat");
     return res.json(result);
   } catch (err) {
     console.log(err);

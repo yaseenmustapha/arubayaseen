@@ -2,7 +2,7 @@ import Feed from "./Feed";
 
 async function getPosts() {
   const res = await fetch(`${process.env.BASE_URL}/api/getPosts`, {
-    next: { revalidate: 30 },
+    next: { revalidate: 15 },
   });
   return res.json();
 }
