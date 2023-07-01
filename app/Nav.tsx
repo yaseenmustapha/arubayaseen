@@ -50,7 +50,7 @@ export default function Nav() {
 
   const calculateDaysToGo = () => {
     const currentDate = new Date();
-    const targetDate = new Date("2023-07-02");
+    const targetDate = new Date("2023-07-03"); // uses the start of the day so we use the date for the day after instead
     const differenceInTime = targetDate.getTime() - currentDate.getTime();
     const differenceInDays = Math.ceil(differenceInTime / (1000 * 3600 * 24));
     return differenceInDays;
@@ -84,7 +84,7 @@ export default function Nav() {
       )}
       <div
         className="container mx-auto px-6 py-3"
-        style={{ height: isMobile ? "700px" : "750px" }}
+        style={{ height: isMobile ? "400px" : "750px" }}
       >
         <div
           className="text-center py-6"
@@ -108,59 +108,60 @@ export default function Nav() {
           </p>
         </div>
         {isMobile ? (
-          <nav className="p-6 font-gilda">
-            <div className="inline">
-              <div className="text-sm text-center">
-                <Link href="/">
-                  <p
-                    className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 relative hover-underline tracking-widest italic ${
-                      !segment ? "current-page" : "underline-page"
-                    }`}
-                  >
-                    Home
-                  </p>
-                </Link>
-                <Link href="/rsvp">
-                  <p
-                    className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 relative hover-underline tracking-widest italic ${
-                      segment === "rsvp" ? "current-page" : "underline-page"
-                    }`}
-                  >
-                    RSVP
-                  </p>
-                </Link>
-                <Link href="/gallery">
-                  <p
-                    className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 relative hover-underline tracking-widest italic ${
-                      segment === "gallery" ? "current-page" : "underline-page"
-                    }`}
-                  >
-                    Gallery
-                  </p>
-                </Link>
-                <Link href="/chat">
-                  <p
-                    className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 relative hover-underline tracking-widest italic ${
-                      segment === "chat" ? "current-page" : "underline-page"
-                    }`}
-                  >
-                    Chat
-                  </p>
-                </Link>
-                <a href="/registry">
-                  {" "}
-                  {/* TODO: change to Link once subsequent script loading is fixed */}
-                  <p
-                    className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 relative hover-underline tracking-widest italic ${
-                      segment === "registry" ? "current-page" : "underline-page"
-                    }`}
-                  >
-                    Registry
-                  </p>
-                </a>
-              </div>
-            </div>
-          </nav>
+          <nav className="font-gilda">
+          <div className="text-sm text-center">
+            <a href="/" className="inline-flex flex-row items-center">
+              <p
+                className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 relative hover-underline tracking-widest italic ${
+                  !segment ? "current-page" : "underline-page"
+                }`}
+                style={{ margin: "0 0.5rem", padding: "0.5rem 0" }}
+              >
+                Home
+              </p>
+            </a>
+            <a href="/rsvp" className="inline-flex flex-row items-center">
+              <p
+                className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 relative hover-underline tracking-widest italic ${
+                  segment === "rsvp" ? "current-page" : "underline-page"
+                }`}
+                style={{ margin: "0 0.5rem", padding: "0.5rem 0" }}
+              >
+                RSVP
+              </p>
+            </a>
+            <a href="/gallery" className="inline-flex flex-row items-center">
+              <p
+                className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 relative hover-underline tracking-widest italic ${
+                  segment === "gallery" ? "current-page" : "underline-page"
+                }`}
+                style={{ margin: "0 0.5rem", padding: "0.5rem 0" }}
+              >
+                Gallery
+              </p>
+            </a>
+            <a href="/chat" className="inline-flex flex-row items-center">
+              <p
+                className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 relative hover-underline tracking-widest italic ${
+                  segment === "chat" ? "current-page" : "underline-page"
+                }`}
+                style={{ margin: "0 0.5rem", padding: "0.5rem 0" }}
+              >
+                Chat
+              </p>
+            </a>
+            <a href="/registry" className="inline-flex flex-row items-center">
+              <p
+                className={`block mt-4 lg:inline-block lg:mt-0 text-gray-600 relative hover-underline tracking-widest italic ${
+                  segment === "registry" ? "current-page" : "underline-page"
+                }`}
+                style={{ margin: "0 0.5rem", padding: "0.5rem 0" }}
+              >
+                Registry
+              </p>
+            </a>
+          </div>
+        </nav>
         ) : (
           <nav className="flex items-center justify-between flex-wrap p-6 font-gilda">
             <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
