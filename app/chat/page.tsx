@@ -8,19 +8,19 @@ async function getPosts() {
 }
 
 export default async function Chat() {
-  const data: {
-    id: string;
-    image: string;
-    content: string;
-    user: { id: string; name: string; image: string };
-    createdAt: string;
-    likes: [];
-  }[] = await getPosts();
+  // const data: {
+  //   id: string;
+  //   image: string;
+  //   content: string;
+  //   user: { id: string; name: string; image: string };
+  //   createdAt: string;
+  //   likes: [];
+  // }[] = await getPosts();
 
   return (
     <main>
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Feed posts={data} />
+        {/* <Feed posts={data} /> */}
       </div>
     </main>
   );
