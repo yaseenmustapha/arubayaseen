@@ -15,7 +15,7 @@ export default async function Chat() {
     user: { id: string; name: string; image: string };
     createdAt: string;
     likes: [];
-  }[] = await getPosts();
+  }[] = await getPosts() || [];
 
   return (
     <main>
