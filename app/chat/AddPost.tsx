@@ -8,7 +8,6 @@ import Filter from "bad-words";
 const filter = new Filter();
 
 export default function AddPost(): JSX.Element {
-  const { data: session } = useSession();
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(false);
   const [enhancing, setEnhancing] = useState(false);
@@ -16,7 +15,6 @@ export default function AddPost(): JSX.Element {
   const [error, setError] = useState(false);
   const [errorMessage, setErrorMessage] = useState("Error creating post.");
   const router = useRouter();
-  const [image, setImage] = useState<File | null>(null);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
 
   const enhanceWithAI = async () => {
@@ -75,7 +73,7 @@ export default function AddPost(): JSX.Element {
         });
         if (res.ok) {
           setContent("");
-          setImage(null);
+          setPreviewUrl(null);
           router.refresh();
         }
         setError(false);

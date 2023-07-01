@@ -2,7 +2,7 @@ import Feed from "./Feed";
 
 async function getPosts() {
   const res = await fetch(`${process.env.BASE_URL}/api/getPosts`, {
-    cache: "no-cache",
+    cache: "no-store",
   });
   return res.json();
 }
