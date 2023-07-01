@@ -17,7 +17,6 @@ export default async function Chat() {
     createdAt: string;
     likes: [];
   }[] = await getPosts();
-  console.log('likes', data[0].likes); // access likes property of first post
 
   return (
     <main>
